@@ -1,0 +1,1082 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.body1 {
+    display: flex;
+    min-height: 100vh;
+    background-color: #e1d0bc; 
+    padding: 20px;
+}
+.body2 {
+    min-height: 100vh;
+    background-color: #e1d0bc; 
+    padding: 20px;
+}
+body{
+    min-height: 100vh;
+    background-color: #e1d0bc; 
+    padding: 20px;
+
+
+
+
+
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 3% 10%;
+    background-color: #d7c493ff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    animation: slideDown 1s ease forwards;
+}
+
+.my_name {
+    position: relative;
+    font-size: 25px;
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.my_name::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #e1d0bc;
+    animation: showRight 1s ease forwards;
+    animation-delay: .4s;
+}
+
+.nav1 a {
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+    font-weight: 700;
+    margin-left: 25px;
+    position: relative;
+}
+
+.nav1 a::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #7D6A55;
+    transition: width 0.3s ease;
+}
+
+.nav1 a:hover::before, 
+.nav1 a.active::before {
+    width: 100%;
+}
+.nav1 a:hover,
+.nav1 a.active{
+    color: #7D6A55;
+}
+
+.icons{
+    position: absolute;
+    bottom: 20%;
+    width: 10%;
+    display: flex;
+    justify-content: space-between;
+    opacity: 0;
+    animation: fadeIn 3.5s forwards;
+
+}
+
+.icons a{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #7D6A55;
+    border-radius: 50%;
+    font-size: 30px;
+    color: #7D6A55;
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
+.icons a:hover{
+    color:  #e1d0bc;
+}
+
+
+
+
+/* Start of Homepage CSS*/
+.home{
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    
+}
+
+
+
+.home-content h1{
+    position: relative;
+    font-size: 300%;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.home-content h1::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #e1d0bc;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.home-content h3{
+    position: relative;
+    font-size: 32px;
+    font-weight: 700;
+    color: #7D674E;
+}
+
+.home-content h3::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #e1d0bc;
+    animation: showRight 1.5s ease forwards;
+    animation-delay: 1.5s;
+}
+
+.home-content p{
+    position: relative;
+    font-size: 20px;
+    margin: 20px 0 40px;
+}
+.home-content p::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #e1d0bc;
+    animation: showRight 1.5s ease forwards;
+    animation-delay: 1.8s;
+}
+
+.icons a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #7D6A55 ;
+    z-index: -1;    
+    transition: 0.5s;
+}
+
+.icons a:hover::before{
+    width: 100%;
+
+}
+
+.slider {
+    margin-top: 12%;
+    position: relative;
+    width: 30%;
+    overflow: hidden;
+   
+}
+
+
+
+.images {
+    display: flex;
+    width: 100%;
+}
+.images img {
+    height: 100%;
+    width: 100%;
+    transition: all 0.15s ease;
+    opacity: 0;
+    animation: fadeIn 3.5s forwards;
+}
+.images input {
+    display: none;
+}
+.dots {
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+    transform: translateY(500%);
+    animation: slideUp 3s forwards;
+}
+.dots label {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: solid #fff 3px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    margin: 5px;
+}
+.dots label:hover {background: #fff;}
+#img1:checked ~ .m1 {
+    margin-left: 10%;
+    margin-right: 25%;
+}
+#img2:checked ~ .m2 {
+    margin-left: -85%;
+}
+#img3:checked ~ .m3 {
+    margin-left: -200%;
+}
+
+@keyframes showRight {
+    100%{
+        width: 0;
+    }
+}
+
+@keyframes fadeIn{
+    to{
+        opacity: 1;
+    }
+}
+@keyframes slideUp {
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* End of Homepage CSS*/
+
+
+/* Start of My Skills CSS*/
+
+
+
+.h2con{
+    height: 50vh;
+    width: 80vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    margin-top: 8%;
+    margin-left: 33%;
+}
+
+.h2con h2{
+    margin-bottom: 120%;
+    text-decoration: none;
+    font-size: 35px;
+}
+
+
+
+
+.container{
+    position: absolute;
+    max-width: 100%;
+    width: 30%;
+    background-color: #fff;
+
+
+    margin-top: 12%;
+    margin-left: 10%;
+
+    padding: 5px 20px ;
+    border-radius: 7px;
+}
+
+.container .skill-box{
+    width: 100%;
+    margin: 25px 0;
+
+}
+.skill-box .title{
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+
+}
+.skill-box .skill-bar{
+    height: 8px;
+    width: 100%;
+    border-radius: 6px;
+    margin-top: 6px;
+    background: rgba(0, 0, 0, 0.1)
+}
+.skill-bar .skill-per{
+    position: relative;
+    display: block;
+    height: 100%;
+    width: 50%;
+    border-radius: 6px;
+    background: #4070f4;
+    animation: progress 2s ease-in-out forwards;
+    opacity: 0;
+}
+
+@keyframes progress {
+    0%{
+        width: 0;
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+.skill-per .tooltip{
+    position: absolute;
+    right: -12%;
+    top: -28px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 3px;
+    background-color: #4070f4;
+    z-index: 1;
+}
+.tooltip::before{
+    content: '';
+    position: absolute;
+    bottom: 60%;
+    bottom: -10px;
+    height: 10px;
+    width: 10px;
+    z-index: -1;
+    background-color: #4070f4;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+
+
+
+
+.container1{
+    position: absolute;
+    max-width: 100%;
+    width: 30%;
+    background-color: #fff;
+
+
+    margin-top: 20%;
+    margin-left: 10%;
+
+    padding: 5px 20px ;
+    border-radius: 7px;
+}
+
+.container1 .skill-box1{
+    width: 100%;
+    margin: 25px 0;
+
+}
+.skill-box1 .title1{
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+
+}
+.skill-box1 .skill-bar1{
+    height: 8px;
+    width: 100%;
+    border-radius: 6px;
+    margin-top: 6px;
+    background: rgba(0, 0, 0, 0.1)
+}
+.skill-bar1 .skill-per1{
+    position: relative;
+    display: block;
+    height: 100%;
+    width: 50%;
+    border-radius: 6px;
+    background: #4070f4;
+    animation: progress 2s ease-in-out forwards;
+    opacity: 0;
+}
+
+
+
+@keyframes progress {
+    0%{
+        width: 0;
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+.skill-per1 .tooltip1{
+    position: absolute;
+    right: -12%;
+    top: -28px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 3px;
+    background-color: #4070f4;
+    z-index: 1;
+}
+.tooltip1::before{
+    content: '';
+    position: absolute;
+    bottom: 60%;
+    bottom: -10px;
+    height: 10px;
+    width: 10px;
+    z-index: -1;
+    background-color: #4070f4;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+
+
+
+
+
+.container2{
+    position: absolute;
+    max-width: 100%;
+    width: 30%;
+    background-color: #fff;
+
+
+    margin-top: 12%;
+    margin-left: 55%;
+
+    padding: 5px 20px ;
+    border-radius: 7px;
+}
+
+.container2 .skill-box2{
+    width: 100%;
+    margin: 25px 0;
+
+}
+.skill-box2 .title2{
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+
+}
+.skill-box2 .skill-bar2{
+    height: 8px;
+    width: 100%;
+    border-radius: 6px;
+    margin-top: 6px;
+    background: rgba(0, 0, 0, 0.1)
+}
+.skill-bar2 .skill-per2{
+    position: relative;
+    display: block;
+    height: 100%;
+    width: 60%;
+    border-radius: 6px;
+    background: #4070f4;
+    animation: progress 2s ease-in-out forwards;
+    opacity: 0;
+}
+
+@keyframes progress {
+    0%{
+        width: 0;
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+.skill-per2 .tooltip2{
+    position: absolute;
+    right: -12%;
+    top: -28px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 3px;
+    background-color: #4070f4;
+    z-index: 1;
+}
+.tooltip2:before{
+    content: '';
+    position: absolute;
+    bottom: 60%;
+    bottom: -10px;
+    height: 10px;
+    width: 10px;
+    z-index: -1;
+    background-color: #4070f4;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+
+
+.container3{
+    position: absolute;
+    max-width: 100%;
+    width: 30%;
+    background-color: #fff;
+
+
+    margin-top: 20%;
+    margin-left: 55%;
+
+    padding: 5px 20px ;
+    border-radius: 7px;
+}
+
+.container3 .skill-box3{
+    width: 100%;
+    margin: 25px 0;
+
+}
+.skill-box3 .title3{
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+
+}
+.skill-box3 .skill-bar3{
+    height: 8px;
+    width: 100%;
+    border-radius: 6px;
+    margin-top: 6px;
+    background: rgba(0, 0, 0, 0.1)
+}
+.skill-bar3 .skill-per3{
+    position: relative;
+    display: block;
+    height: 100%;
+    width: 45%;
+    border-radius: 6px;
+    background: #4070f4;
+    animation: progress 2s ease-in-out forwards;
+    opacity: 0;
+}
+
+@keyframes progress {
+    0%{
+        width: 0;
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+.skill-per3 .tooltip3{
+    position: absolute;
+    right: -12%;
+    top: -28px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 3px;
+    background-color: #4070f4;
+    z-index: 1;
+}
+.tooltip3:before{
+    content: '';
+    position: absolute;
+    bottom: 60%;
+    bottom: -10px;
+    height: 10px;
+    width: 10px;
+    z-index: -1;
+    background-color: #4070f4;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.section1 {
+    height: 30vh; 
+    display: flex;
+
+  }
+  
+.section2 {
+    height: 200vh; 
+    display: flex;
+    justify-content: center;
+
+
+  }
+  .h2con h2 {
+    margin-top: 5%; 
+    text-decoration: none;
+    font-size: 35px;
+    opacity: 0; 
+    transform: translateY(-100%); 
+    animation: fadeInDown 1s forwards ease-in-out;
+    animation-delay: 1s;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.container, .container1,.container2, .container3{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    opacity: 0;
+    
+    animation: fadeIn 3.5s forwards;
+
+}
+
+
+
+.section2 p{
+    font-size: 20px;
+}
+.first {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.first h1 {
+    font-size: 30px;
+    margin-left: 20vh;
+    margin-top: 30vh;
+}
+
+.first img {
+    width: 50vh;
+    height: 30vh;
+    margin-top: 20px;
+    margin-left: 22vh;
+}
+
+.project-details {
+    display: flex;
+}
+
+.text-details {
+    text-align: left; 
+}
+
+.text-details h3 {
+    font-size: 25px;
+    margin-top: 5vh ;
+    margin-left: 20px;
+}
+
+.text-details p {
+    position: relative;
+    margin-top: 20px;
+    margin-right: 30vh;
+    margin-left: 30px;
+
+}
+
+.second {
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.second img {
+    width: 50vh;
+    height: 30vh;
+    margin-top: 50px;
+    margin-left: 22vh;
+}
+
+.project-details2 {
+    display: flex;
+}
+
+.text-details2 {
+    text-align: left; 
+}
+
+.text-details2 h3 {
+    font-size: 25px;
+    margin-top: 8vh ;
+    margin-left: 20px;
+}
+
+.text-details2 p {
+    position: relative;
+    margin-top: 20px;
+    margin-right: 30vh;
+    margin-left: 30px;
+
+}
+
+
+.third {
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.third img {
+    width: 50vh;
+    height: 30vh;
+    margin-top: 50px;
+    margin-left: 22vh;
+}
+
+.project-details3 {
+    display: flex;
+}
+
+.text-details3 {
+    text-align: left; 
+}
+
+.text-details3 h3 {
+    font-size: 25px;
+    margin-top: 8vh ;
+    margin-left: 20px;
+}
+
+.text-details3 p {
+    position: relative;
+    margin-top: 20px;
+    margin-right: 30vh;
+    margin-left: 30px;
+
+}
+
+
+
+.fourth {
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.fourth img {
+    width: 50vh;
+    height: 30vh;
+    margin-top: 50px;
+    margin-left: 22vh;
+}
+
+.project-details4 {
+    display: flex;
+}
+
+.text-details4 {
+    text-align: left; 
+}
+
+.text-details4 h3 {
+    font-size: 25px;
+    margin-top: 8vh ;
+    margin-left: 20px;
+}
+
+.text-details4 p {
+    position: relative;
+    margin-top: 20px;
+    margin-right: 30vh;
+    margin-left: 30px;
+
+}
+.project-details img{
+    opacity: 0;
+    
+    animation: fadeIn 3s forwards;
+}
+.project-details2 img{
+    opacity: 0;
+    
+    animation: fadeIn 3s forwards;
+}
+.project-details3 img{
+    opacity: 0;
+    
+    animation: fadeIn 3s forwards;
+}
+.project-details4 img{
+    opacity: 0;
+    
+    animation: fadeIn 3s forwards;
+}
+.anotherOne{
+    opacity: 0;
+    
+    animation: fadeIn 3s forwards;
+}
+
+.first h1::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #e1d0bc;
+    animation: showRight 1.5s ease forwards;
+    animation-delay: 1s;
+}
+
+.section2 p::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #e1d0bc;
+    animation: showRight 1.5s ease forwards;
+    animation-delay: 1s;
+
+}
+
+
+.text-details h3,
+.text-details2 h3,
+.text-details3 h3,
+.text-details4 h3 {
+    font-size: 25px;
+    margin-top: 8vh;
+    margin-left: 20px;
+    opacity: 0;
+    transform: translateY(-100%);
+    animation: fadeInDown 1s forwards ease-in-out;
+    animation-delay: 1s;
+}
+
+
+
+/* End of My Skills CSS*/
+
+/* Start of About Me CSS*/
+
+.abouth1{
+    position: relative;
+    text-align: center;
+    margin-top: 20vh;
+    
+
+
+}
+
+.abouth1{
+        opacity: 0;
+        animation: fadeInDown 1.5s ease-in-out forwards;
+}
+
+
+
+.aboutMe{
+    display: flex;
+    height: 50vh; 
+    display: flex;
+    
+}
+.firstAbout img{
+    width: 45vh;
+    height: 30vh;
+    margin-top: 5vh;
+    
+    margin-left: 25vh;
+
+
+}
+.aboutContent{
+    display: flex;
+}
+
+
+
+.firstAbout{
+    display: flex;
+}
+
+.aboutContent p {
+    position: absolute;
+    margin-top: 8vh; 
+    margin-left: 75vh;
+    margin-right: 30vh;
+    font-size: 23px;
+    font-weight: 400;
+}
+.container0{
+    width: 100%;
+    padding: 35px 20%;
+}
+main.row{
+    display:grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+}
+
+.col header.title{
+    padding: 0px 0px 20px 30px;
+}
+.col .contents{
+    padding: 0px 30px;
+    border-left: 2px solid #bababa;
+}
+.col .contents .box{
+    position: relative;
+    padding: 20px;
+    border: 1px solid #eaeaea;
+    transition: all 0.4s;
+    margin-bottom: 20px;
+}
+
+.col .contents .box:hover{
+    box-shadow: 0px 3px 12px 0px black;
+    border: 1ps solid transparent;
+}
+
+.col1 header.title1{
+    padding: 0px 0px 20px 30px;
+}
+.col1 .contents1{
+    padding: 0px 30px;
+    border-left: 2px solid #bababa;
+}
+.col1 .contents1 .box1{
+    position: relative;
+    padding: 20px;
+    border: 1px solid #eaeaea;
+    transition: all 0.4s;
+    margin-bottom: 20px;
+}
+
+.col1 .contents1 .box1:hover{
+    box-shadow: 0px 3px 12px 0px black;
+    border: 1ps solid transparent;
+}
+
+.firstAbout{
+
+    display: flex;
+    justify-content: space-between;
+    opacity: 0;
+    
+    animation: fadeIn 3.5s forwards;
+
+}
+.container0{
+    opacity: 0;
+ 
+    animation: fadeIn 3.5s forwards;
+
+}
+.aboutContent img{
+    opacity: 0;
+    
+    animation: fadeIn 2s forwards;
+}
+
+
+
+
+.container5{
+    width: 100%;
+    padding: 30vh 20%;
+}
+
+/*      End of About Me CSS     */
+
+/*      Start of Contact CSS      */
+
+.col3 header.title3{
+    padding: 0px 0px 20px 30px;
+}
+.col3 .contents3{
+    padding: 0px 30px;
+    border-left: 2px solid #bababa;
+}
+.col3 .contents3 .box3{
+    position: relative;
+    padding: 20px;
+    border: 1px solid #eaeaea;
+    transition: all 0.4s;
+    margin-bottom: 20px;
+}
+
+.col3 .contents3 .box3:hover{
+    box-shadow: 0px 3px 12px 0px black;
+    border: 1ps solid transparent;
+}
+main.row2{
+    display:grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+}
+.box3 a{
+
+    color: black;
+}
+
+.container5{
+    opacity: 0;
+ 
+    animation: fadeIn 3.5s forwards;
+
+}
